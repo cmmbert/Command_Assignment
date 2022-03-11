@@ -1,8 +1,6 @@
 #pragma once
 #include <Windows.h>
 #include <memory>
-#pragma comment(lib, "xinput.lib")
-#include <Xinput.h>
 
 class Command;
 
@@ -19,15 +17,14 @@ namespace dae
 	class InputManager
 	{
 	public:
-		void ProcessInput(); //No commands impl
+		InputManager();
+		~InputManager();
 		Command* HandleInput();
 		bool IsPressed(eControllerButton buttonMask) const;
 
 	private:
-		/*class XINPUT_STATE;
-		std::unique_ptr<*/
-		XINPUT_STATE previousState{};
-		XINPUT_STATE currentState{};
+		class impl;
+		std::unique_ptr<impl> pimpl;
 		int buttonsPressedThisFrame{};
 		int buttonsReleasedThisFrame{};
 	};
