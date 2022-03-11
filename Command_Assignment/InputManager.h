@@ -3,6 +3,8 @@
 #pragma comment(lib, "xinput.lib")
 #include <Xinput.h>
 
+class Command;
+
 namespace dae
 {
 	enum class eControllerButton
@@ -16,7 +18,8 @@ namespace dae
 	class InputManager
 	{
 	public:
-		void ProcessInput();
+		void ProcessInput(); //No commands impl
+		Command* HandleInput();
 		bool IsPressed(eControllerButton buttonMask) const;
 
 	private:
