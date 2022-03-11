@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#include <memory>
 #pragma comment(lib, "xinput.lib")
 #include <Xinput.h>
 
@@ -23,6 +24,8 @@ namespace dae
 		bool IsPressed(eControllerButton buttonMask) const;
 
 	private:
+		/*class XINPUT_STATE;
+		std::unique_ptr<*/
 		XINPUT_STATE previousState{};
 		XINPUT_STATE currentState{};
 		int buttonsPressedThisFrame{};

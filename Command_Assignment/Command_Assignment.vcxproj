@@ -156,14 +156,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Command.h" />
+    <ClInclude Include="FartCommand.h" />
     <ClInclude Include="FireCommand.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="JumpCommand.h" />
+    <ClInclude Include="DuckCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="FartCommand.cpp" />
     <ClCompile Include="FireCommand.cpp" />
+    <ClCompile Include="JumpCommand.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="DuckCommand.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,11 @@
-#define WIN32_LEAN_AND_MEAN
+//#define WIN32_LEAN_AND_MEAN //why was this in the example?
 #include "InputManager.h"
 
+
+#include "DuckCommand.h"
+#include "FartCommand.h"
 #include "FireCommand.h"
+#include "JumpCommand.h"
 
 
 void dae::InputManager::ProcessInput()
@@ -27,6 +31,9 @@ Command* dae::InputManager::HandleInput()
 	buttonsReleasedThisFrame = buttonChanges & (~currentState.Gamepad.wButtons);
 
 	if (IsPressed(eControllerButton::ButtonX)) return new FireCommand();
+	if (IsPressed(eControllerButton::ButtonY)) return new JumpCommand();
+	if (IsPressed(eControllerButton::ButtonA)) return new DuckCommand();
+	if (IsPressed(eControllerButton::ButtonB)) return new FartCommand();
 
 	return nullptr;
 }
