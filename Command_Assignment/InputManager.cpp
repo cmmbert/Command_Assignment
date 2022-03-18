@@ -1,4 +1,5 @@
-//#define WIN32_LEAN_AND_MEAN //why was this in the example?
+#define WIN32_LEAN_AND_MEAN //why was this in the example?
+#include <Windows.h>
 #include "InputManager.h"
 #include <Xinput.h>
 #pragma comment(lib, "xinput.lib")
